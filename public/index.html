@@ -9,9 +9,12 @@
 </head>
 
 <body>
-    <ul id="messages"></ul>
+    <h1>Real-Time-Chat 💬</h1>
+    <div class="container">
+        <ul id="messages"></ul>
+    </div>
     <form id="form" action="">
-        <input id="input" type="text">
+        <input id="input" type="text" placeholder="Type your message here...">
         <button type="submit">Send</button>
     </form>
     <script src="/socket.io/socket.io.js"></script>

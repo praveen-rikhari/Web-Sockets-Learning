@@ -6,6 +6,7 @@ const messages = document.getElementById('messages');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    
     const msg = input.value;
     if (msg.trim()) {
         socket.emit('chat-msg', msg.trim());

@@ -1,13 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  margin: 10px;
+}
+.container {
+  border: 1px solid;
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+#form {
+  width: 800px;
+  display: grid;
+  grid-template-columns: 90% 10%;
+}
+#input {
+  padding: 10px 15px;
+  outline: none;
+  background-color: #eee;
+}
+#input:focus {
+  border-color: #000;
+  background-color: #fff;
+}
+button {
+  background-color: #0077b6;
+  color: white;
+  font-weight: 900;
+  transition: 0.15s;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #016195;
+}
 #messages {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-
 #messages li {
-  padding: 5px 10px;
+  padding: 10px 15px;
+  background-color: #e2faec;
 }
-
 #messages li:nth-child(odd) {
-  background: #eee;
+  background: #fefae0;
 }
