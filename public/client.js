@@ -9,7 +9,6 @@ form.addEventListener('submit', (e) => {
     const msg = input.value;
     if (msg.trim()) {
         socket.emit('chat-msg', msg.trim());
-        msg = '';
     }
 });
 
@@ -17,4 +16,9 @@ socket.on('chat-msg', (msg) => {
     const msgList = document.createElement('li');
     msgList.textContent = msg;
     messages.appendChild(msgList);
+})
+
+socket.on('request-username', () => {
+    const username = prompt("Enter your name.");
+    socket.emit('username', username);
 })
