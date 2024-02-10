@@ -6,7 +6,7 @@ const messages = document.getElementById('messages');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const msg = input.value;
     if (msg.trim()) {
         socket.emit('chat-msg', msg.trim());
@@ -23,3 +23,9 @@ socket.on('request-username', () => {
     const username = prompt("Enter your name.");
     socket.emit('username', username);
 })
+
+socket.on('user-left', (username) => {
+    const msgList = document.createElement('li');
+    msgList.textContent = `${username} has left the chat`;
+    messages.appendChild(msgList);
+});
