@@ -67,14 +67,16 @@ io.on('connection', (socket) => {
         })
     });
 
+
+    //Deleting disconnected user from database
     // Listen for disconnection
     socket.on('disconnect', () => {
         if (socket.username) {
             io.emit('chat message', `${socket.username} has left the chat`);
 
             // Delete user's messages from database
-            db.query('DELETE FROM chat WHERE username = ?', [socket.username], (error, results) => {
-                if (error) throw error;
+            db.query('DELETE FROM chat WHERE username = ?', [socket.username], (err, results) => {
+                if (err) throw err;
             });
         }
         console.log('A user disconnected');
